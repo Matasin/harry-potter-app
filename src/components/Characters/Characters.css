@@ -1,0 +1,38 @@
+.CharactersContainer {
+    width: 90%;
+    margin: 2% auto;
+    text-align: center;
+}
+.CharacterCardsContainer {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.CharacterCard {
+    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.73);
+    width: 26%;
+    margin: 3% auto;
+    
+    text-transform: capitalize;
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: all 0.20s ease;
+}
+.CharacterCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 34px 11px rgba(0,0,0,0.64);
+}
+.CharacterCard img {
+    height: 50vh;
+    width: 100%;
+
+    border-radius: 2vh;
+    mix-blend-mode: multiply;
+}
+.CharacterData {
+    text-align: left;
+    padding: 5%;
+    letter-spacing: 0.5px;
+}

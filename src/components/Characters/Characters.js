@@ -15,21 +15,52 @@ const Characters = ( {URL} ) => {
             <h1>All characters in Harry Potter:</h1>
             <div className='CharacterCardsContainer'>
                 {data.map( (character, index) => {
+                    if(character.wand.core === '') {
+                        character.wand.core = 'Missing data';
+                    }
+                    if(character.patronus === '') {
+                        character.patronus = 'Missing data';
+                    } 
+                    if(character.alive === false) {
+                        character.alive = 'Dead';
+                    }
+                    else if(character.alive === true) {
+                        character.alive = 'Alive';
+                    }
                     return (
-                        <div 
-                            key={index}
-                            className='CharacterCard'
-                        >
+                        <div key={index} className='CharacterCard'>
                             <img src={character.image} alt={character.image}/>
                             <div className='CharacterData'>
                                 <div>
-                                    Name: <b>{character.name}</b>
+                                    name: <b>{character.name}</b>
                                 </div>
                                 <div>
-                                    Species: <b>{character.species}</b>
+                                    species: <b>{character.species}</b>
                                 </div>
                                 <div>
-                                    House: <b>{character.house}</b>
+                                    house: <b>{character.house}</b>
+                                </div>
+                            </div>
+                            <div className='CharacterData-Back-Container'>
+                                <div className='CharacterData-Back'>
+                                    <div>
+                                        date of birth: <b>{character.dateOfBirth}</b>
+                                    </div>
+                                    <div>
+                                        ancestry: <b>{character.ancestry} ({character.species}) </b>
+                                    </div>
+                                    <div>
+                                        wand: <b>{character.wand.wood} {character.wand.core} {character.wand.length}</b>
+                                    </div>
+                                    <div>
+                                        patronus: <b>{character.patronus}</b>
+                                    </div>
+                                    <div>
+                                        Played by: <b>{character.actor}</b>
+                                    </div>
+                                    <div>
+                                        <b>{character.alive}</b>
+                                    </div>
                                 </div>
                             </div>
                         </div>

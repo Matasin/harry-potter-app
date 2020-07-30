@@ -19,10 +19,14 @@
     border-radius: 2vh;
     cursor: pointer;
     transition: all 0.20s ease;
+
+    position: relative;
 }
 .CharacterCard:hover {
     transform: scale(1.03);
     box-shadow: 0px 0px 34px 11px rgba(0,0,0,0.64);
+
+    background-color: rgb(24, 23, 23);
 }
 .CharacterCard img {
     height: 50vh;
@@ -35,4 +39,27 @@
     text-align: left;
     padding: 5%;
     letter-spacing: 0.5px;
+}
+
+.CharacterData-Back-Container {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20%;
+    top: 20%;
+    color: white;
+    transition: all 0.25s ease;
+
+}
+.CharacterCard:hover .CharacterData-Back-Container {
+    opacity: 1;
+}
+.CharacterData-Back {
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 3vh;
+}
+.CharacterData-Back div {
+    border-bottom: 1px solid gray;
 }

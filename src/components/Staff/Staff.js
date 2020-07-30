@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import './Characters.css';
+import './Staff.css';
 
-const Characters = ( {URL} ) => {
+const Staff = ( {URL} ) => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(URL)
+        fetch(URL + `/staff`)
             .then(response => response.json())
             .then(data => setData(data))
     }, [URL]); 
 
     return (
-        <div className='Characters-Container'>
-            <h1>All characters in Harry Potter:</h1>
-            <div className='Character-Cards-Container'>
+        <div className='Staff-Container'>
+            <h1>Students in Harry Potter</h1>
+            <div className='Staff-Cards-Container'>
                 {data.map( (character, index) => {
                     if(character.wand.core === '') {
                         character.wand.core = ('?');
@@ -35,9 +35,9 @@ const Characters = ( {URL} ) => {
                         character.alive = 'Alive';
                     }
                     return (
-                        <div key={index} className='Character-Card'>
+                        <div key={index} className='Staff-Card'>
                             <img src={character.image} alt={character.image}/>
-                            <div className='Character-Data'>
+                            <div className='Staff-Data'>
                                 <div>
                                     name: <b>{character.name}</b>
                                 </div>
@@ -48,8 +48,8 @@ const Characters = ( {URL} ) => {
                                     house: <b>{character.house}</b>
                                 </div>
                             </div>
-                            <div className='Character-Data-Back-Container'>
-                                <div className='Character-Data-Back'>
+                            <div className='Staff-Data-Back-Container'>
+                                <div className='Staff-Data-Back'>
                                     <div>
                                         date of birth: <b>{character.dateOfBirth}</b>
                                     </div>
@@ -81,4 +81,4 @@ const Characters = ( {URL} ) => {
         </div>
     )
 }
-export default Characters
+export default Staff

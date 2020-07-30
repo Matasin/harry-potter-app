@@ -1,16 +1,16 @@
-.Characters-Container {
+.Students-Container {
     width: 90%;
     margin: 2% auto;
     text-align: center;
 }
-.Character-Cards-Container {
+.Students-Cards-Container {
     width: 90%;
     margin: auto;
 
     display: flex;
     flex-wrap: wrap;
 }
-.Character-Card {
+.Students-Card {
     box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.73);
     width: 26%;
     margin: 3% auto;
@@ -22,26 +22,26 @@
 
     position: relative;
 }
-.Character-Card:hover {
+.Students-Card:hover {
     transform: scale(1.03);
     box-shadow: 0px 0px 34px 11px rgba(0,0,0,0.64);
 
     background-color: rgb(24, 23, 23);
 }
-.Character-Card img {
+.Students-Card img {
     height: 50vh;
     width: 100%;
 
     border-radius: 2vh;
     mix-blend-mode: multiply;
 }
-.Character-Data {
+.Students-Data {
     text-align: left;
     padding: 5%;
     letter-spacing: 0.5px;
 }
 
-.Character-Data-Back-Container {
+.Students-Data-Back-Container {
     position: absolute;
     opacity: 0;
     left: 0;
@@ -52,15 +52,15 @@
     transition: all 0.25s ease;
 
 }
-.Character-Card:hover .Character-Data-Back-Container {
+.Students-Card:hover .Students-Data-Back-Container {
     opacity: 1;
     top: 20%;
 }
-.Character-Data-Back {
+.Students-Data-Back {
     text-align: left;
     letter-spacing: 1px;
     line-height: 3vh;
 }
-.Character-Data-Back div {
+.Students-Data-Back div {
     border-bottom: 1px solid gray;
 }

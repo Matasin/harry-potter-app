@@ -6,11 +6,13 @@ import Homepage from './components/Homepage/Homepage'
 import Characters from './components/Characters/Characters'
 import Students from './components/Students/Students'
 import Staff from './components/Staff/Staff'
+import House from './components/House/House'
 
 
 import {
   BrowserRouter as Router ,
-  Switch, Route
+  Switch, 
+  Route
 } from 'react-router-dom';
 
 
@@ -36,7 +38,10 @@ const App = () => {
                   path='/staff' 
                   render={(props) => <Staff {...props} URL={URL} />}
                 />
-                
+                <Route 
+                  path='/house' 
+                  render={(props) => <House {...props} URL={URL} />}
+                />
             </Switch>
         </div>
     </Router>

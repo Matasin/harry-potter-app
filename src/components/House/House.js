@@ -1,19 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import './Staff.css';
+import './House.css';
+import { CSSTransition } from 'react-transition-group'
 
-const Staff = ( {URL} ) => {
+const arrayOfHouses = [
+    'Gryffindor',
+    'Hufflepuff',
+    'Ravenclaw',
+    'Slytherin',
+]
+
+const House = ( {URL} ) => {
 
     const [data, setData] = useState([]);
+    const [targetFetching, setTargetFetching] = useState('gryffindor');
+    const [visibility, setVisibility] = useState(false);
+
     useEffect(() => {
-        fetch(URL + `/staff`)
+        fetch(URL + `/house/${targetFetching}` ) // + somethin who defineuser
             .then(response => response.json())
             .then(data => setData(data))
-    }, [URL]); 
+    }, [URL,targetFetching]); 
+
+    const switchMenu = () => {
+        setVisibility(!visibility)
+    }
 
     return (
-        <div className='Staff-Container'>
-            <h1>Staff in Harry Potter</h1>
-            <div className='Staff-Cards-Container'>
+        <div className='House-Container'>
+            <h1>
+                characters from 
+                <p id='characters-from'>{targetFetching}</p>
+            </h1>
+            <div className='Menu-Container'>
+                <button 
+                    className='Menu-Button'
+                    onClick={switchMenu}
+                >
+                    Show houses
+                </button>
+                <CSSTransition
+                    in = { visibility }
+                    appear = {visibility}
+                    timeout = {300}
+                    classNames = 'list'
+                    unmountOnExit
+                >
+                    <div className='Menu-List'>
+                        {arrayOfHouses.map( (house, index) => {
+                            return (
+                                <li 
+                                    key={index}
+                                    className='Menu-Item'
+                                    onClick= { () => setTargetFetching(house)}
+                                > 
+                                    {house} 
+                                </li>
+                            )
+                        })}
+                    </div>
+                </CSSTransition>
+            </div>
+            <div className='House-Cards-Container'>
                 {data.map( (character, index) => {
                     if(character.wand.core === '') {
                         character.wand.core = ('?');
@@ -35,9 +82,9 @@ const Staff = ( {URL} ) => {
                         character.alive = 'Alive';
                     }
                     return (
-                        <div key={index} className='Staff-Card'>
+                        <div key={index} className='House-Card'>
                             <img src={character.image} alt={character.image}/>
-                            <div className='Staff-Data'>
+                            <div className='House-Data'>
                                 <div>
                                     name: <b>{character.name}</b>
                                 </div>
@@ -48,8 +95,8 @@ const Staff = ( {URL} ) => {
                                     house: <b>{character.house}</b>
                                 </div>
                             </div>
-                            <div className='Staff-Data-Back-Container'>
-                                <div className='Staff-Data-Back'>
+                            <div className='House-Data-Back-Container'>
+                                <div className='House-Data-Back'>
                                     <div>
                                         date of birth: <b>{character.dateOfBirth}</b>
                                     </div>
@@ -81,4 +128,4 @@ const Staff = ( {URL} ) => {
         </div>
     )
 }
-export default Staff
+export default House

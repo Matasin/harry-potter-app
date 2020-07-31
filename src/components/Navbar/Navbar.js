@@ -8,15 +8,6 @@ const Navbar = () => {
             <nav className='Navbar'>
                 <div className='NavbarItemsContainer'>
                     {arrayOfNavItems.map( (item, index) => {
-                        // if(item === 'home page'){
-                        //     return (
-                        //         <Link to='/' className='NavbarItem' key={index}>
-                        //             <li>
-                        //                 {NavItem}
-                        //             </li>
-                        //         </Link>
-                        //     )
-                        // }
                         return (
                                 <Link  
                                     to={`/${item}`}
@@ -36,6 +27,6 @@ const arrayOfNavItems = [
     'characters',
     'students',
     'staff',
-    'houses'
+    'house'
 ];
 export default Navbar

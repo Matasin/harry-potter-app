@@ -1,0 +1,118 @@
+.Menu-Container {
+    /* width: 80%; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.Menu-Button {
+    height: 3.5em;
+    width: 10em;
+    border-radius: 1em;
+    font-size: 1.5em;
+}
+.Menu-Button, .Menu-Item {
+    border: none;
+    background: black;
+    color: white;
+    transition: all 0.20s ease;
+}
+.Menu-Button:hover, .Menu-Item:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+.Menu-Button:active, .Menu-Item:active {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.Menu-Button:focus{outline: none;}
+.Menu-List {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    top: 0;
+    bottom: 0;
+    left: 60%;
+}
+.Menu-Item {
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    padding: 10px;
+    border-radius: 1em;
+    margin: 0 0.5em;
+}
+
+
+.House-Container {
+    width: 90%;
+    margin: 2% auto;
+    text-align: center;
+    text-transform: capitalize;
+}
+.House-Cards-Container {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.House-Card {
+    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.73);
+    width: 26%;
+    margin: 3% auto;
+    
+    border-radius: 2vh;
+    cursor: pointer;
+    transition: all 0.20s ease;
+
+    position: relative;
+}
+.House-Card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 34px 11px rgba(0,0,0,0.64);
+
+    background-color: rgb(24, 23, 23);
+}
+.House-Card img {
+    height: 50vh;
+    width: 100%;
+
+    border-radius: 2vh;
+    mix-blend-mode: multiply;
+}
+.House-Data {
+    text-align: left;
+    padding: 5%;
+    letter-spacing: 0.5px;
+}
+
+.House-Data-Back-Container {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20%;
+    top: 30%;
+    color: white;
+    transition: all 0.25s ease;
+
+}
+.House-Card:hover .House-Data-Back-Container {
+    opacity: 1;
+    top: 20%;
+}
+.House-Data-Back {
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 3vh;
+}
+.House-Data-Back div {
+    border-bottom: 1px solid gray;
+}
+
+#characters-from {
+    color: rgb(165, 79, 79);
+    border-radius: 5px;
+}

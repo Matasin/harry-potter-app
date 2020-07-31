@@ -2,7 +2,7 @@
   "name": "harry-potter-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Matasin/harry-potter-app",
+  "homepage": "https://github.com/Matasin/harry-potter-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

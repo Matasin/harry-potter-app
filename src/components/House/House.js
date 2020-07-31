@@ -36,7 +36,7 @@ const House = ( {URL} ) => {
                     className='Menu-Button'
                     onClick={switchMenu}
                 >
-                    Show houses
+                    Show all houses
                 </button>
                 <CSSTransition
                     in = { visibility }

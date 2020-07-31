@@ -8,7 +8,6 @@ import Students from './components/Students/Students'
 import Staff from './components/Staff/Staff'
 import House from './components/House/House'
 
-
 import {
   BrowserRouter as Router ,
   Switch, 

@@ -33,14 +33,15 @@ const App = () => {
                   path='/students' 
                   render={(props) => <Students {...props} URL={URL} />}
                 />
+                
                 <Route 
                   path='/staff' 
                   render={(props) => <Staff {...props} URL={URL} />}
                 />
                 <Route 
-                  path='/house' 
-                  render={(props) => <House {...props} URL={URL} />}
-                />
+                    path='/house' 
+                    render={(props) => <House {...props} URL={URL} />}
+                  />
             </Switch>
         </div>
     </Router>

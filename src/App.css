@@ -21,3 +21,26 @@ body {color: black;}
     opacity: 0;
 }
 
+.opacityAnimation-appear {
+    opacity: 0;
+}
+.opacityAnimation-appear.opacityAnimation-appear-active {
+    opacity: 1;
+    transition: opacity 500ms linear;
+}
+
+.opacityAnimation-enter {
+    opacity: 0;
+}
+.opacityAnimation-enter.opacityAnimation-enter-active {
+    opacity: 1;
+    transition: opacity 500ms linear;
+}
+
+.opacityAnimation-exit {
+    opacity: 1;
+}
+.opacityAnimation-exit.opacityAnimation-exit-active {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
